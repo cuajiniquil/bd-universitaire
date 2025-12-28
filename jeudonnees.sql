@@ -2,7 +2,7 @@ USE SGBD_PROJET;
 TRUNCATE TABLE ENCADREMENT;
 TRUNCATE TABLE INSCRIPTION;
 TRUNCATE TABLE NOTE;
--- ------------------ --
+
 -- eliminer conditions avant de continuer pour ces tables
 TRUNCATE TABLE COURS;
 TRUNCATE TABLE ENSEIGNANT;
@@ -367,20 +367,3 @@ INSERT INTO NOTE(ID_Note, Num_Et, ID_Exam, Note) VALUES
 (49, 20257190, 'IMNO_TP_2526', 14.0),
 (50, 20249987, 'IMNO_TP_2526', 13.5);
 
--- Vérifier les notes d'étudiants qui ne sont pas inscrits au cours correspondant
-SELECT 
-    n.ID_Note,
-    n.Num_Et,
-    e.Nom_Et,
-    e.Prenom_Et,
-    ex.ID_Exam,
-    ex.Code_C AS Code_Cours,
-    c.Nom_C,
-    n.Note
-FROM NOTE n
-JOIN EXAMEN ex ON n.ID_Exam = ex.ID_Exam
-JOIN COURS c ON ex.Code_C = c.Code_Cours
-JOIN ETUDIANT e ON n.Num_Et = e.Num_Etud
-LEFT JOIN INSCRIPTION i ON n.Num_Et = i.Num_Et AND ex.Code_C = i.Code_C
-WHERE i.ID_Ins IS NULL
-ORDER BY ex.Code_C, e.Nom_Et;
