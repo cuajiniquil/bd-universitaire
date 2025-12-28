@@ -1,0 +1,386 @@
+USE SGBD_PROJET;
+TRUNCATE TABLE ENCADREMENT;
+TRUNCATE TABLE INSCRIPTION;
+TRUNCATE TABLE NOTE;
+-- ------------------ --
+-- eliminer conditions avant de continuer pour ces tables
+TRUNCATE TABLE COURS;
+TRUNCATE TABLE ENSEIGNANT;
+TRUNCATE TABLE ETUDIANT;
+TRUNCATE TABLE EXAMEN;
+
+-- -------------------- --
+-- JEU DE DONNEES FINAL --
+-- -------------------- --
+
+USE SGBD_PROJET;
+
+INSERT INTO COURS (Code_Cours, Nom_C, ECTS, Heures, Annee, Semestre) VALUES
+('BMG2SDV','Biologie Moleculaire 2',4,24,2025,'S1'),
+('SGBDINF','Systemes de Gestion de Bases de Donnees',3,20,2025,'S1'),
+('COMPINF','Compilateurs',4,24,2025,'S2'),
+('ADMNDRT','Droit Administratif',5,30,2025,'S1'),
+('DRS2DRT','Droit Social 2',3,20,2025,'S2'),
+('ADC1ART','Arts du cirque',4,24,2025,'S1'),
+('HDDNART','Histoire de la danse',3,20,2025,'S2'),
+('OOP1INF','Programmation Orientee Objet',4,24,2025,'S1'),
+('PHSVSDV','Physiologie Vegetale',2,12,2025,'S2'),
+('CSTRCHM','Chimie des Solides 2',3,18,2025,'S2'),
+('ORGNCHM','Chimie Organique 2 ',4,28,2025,'S1'),
+('IMNOSDV','Introduction a Immunologie',3,16,2025,'S2'),
+('INTSPSY','Intersectionalite',3,15,2025,'S2'),
+('PSCRPSY','Pensees critiques',2,12,2025,'S1'),
+('PSCLSPC','SPOC 3',1,10,2025,'S1');
+INSERT INTO COURS (Code_Cours, Nom_C, ECTS, Heures, Annee, Semestre) VALUES
+('BTCDMSQ','Introduction a la Batucada',2,16,2025,'S2');
+
+INSERT INTO ETUDIANT(Num_Etud, Nom_Et, Prenom_Et, Date_Naiss, 
+Telephone_Et, Email_Et) VALUES
+(20250001, 'ALCOCER', 'Olivia', '2007-02-05', 1122334455, 'olicocer@email.com'),
+(20255423, 'ZHAO', 'Xiran', '2007-11-20', 123456789, 'zhaoxrn@example.com'),
+(20232732, 'DUBOIS', 'Pierre', '2004-09-15', 1221344356, 'pierredubois49@email.com'),
+(20250505, 'GEDEON', 'Amaru', '2006-01-02', 864297531, 'amrgiddeon@email.com'),
+(20227890,'ZUNIGA','Hugo','2003-07-04',223456710,'zmaximus@example.fr'),
+(20245681,'CHEN','Emily','2006-12-10',197133243,'em1chn@example.com'),
+(20245799,'SILMAN','Hassan','2005-03-24',454657687,'hassmansil@email.com'),
+(20259532,'LEROUX','Swann','2007-01-15',579086432,'swanlerouxv@comail.fr'),
+(20254308,'ESTRADA SOZA','Carmen Maria de los Angeles','2006-06-16',674672670,'estrozacarmina@example.com'),
+(20240957,'YOUSFI','Sara','2005-11-21',765970893,'yousfisara21@example.fr'),
+(20230746,'NOSKOV','Ilya','2004-08-14',989854318,'n0sk0vily0@email.com'),
+(20220456,'PELICAN','Valerie','2004-02-19',207950912,'pelicanvalerie@email.com'),
+(20250490,'KHABIR','Rayanne','2007-01-14',609802356,'khbrayannn@example.fr'),
+(20220395,'SINGH','Lily','2003-04-23',873472785,'llsinghlls@comail.fr'),
+(20250929,'AL NASSIR','Ahmed','1989-08-05',495903420,'alnassirahmd@example.fr'),
+(20230998,'VADCHENKO','Alex','2005-07-04',834569209,'vaddex@example.com'),
+(20257892,'OUMESMAR','Hakim','2006-08-19',210594867,'ouaismaximhbb@example.fr'),
+(20222123,'BUENAVENTURA MIRAVALLES','Federico','2003-02-21',192365982,'vuenosballesdefede@comail.co'),
+(20251243,'STRAUSS-AUBRY','Cristine','2008-04-01',762100467,'straussacris@email.com'),
+(20246037,'AMINA','Mohammed','2006-11-14',812056810,'mohmdam11n@email.com'),
+(20251015,'ALHAJI','Amina','2007-03-22',777321980,'aminalhaji@email.com'),
+(20259604,'ASMA','Yusuf Zafar','1987-06-15',656323101,'yzafarasma@example.fr'),
+(20242024,'ZORIANA','Valentyn','2004-06-07',832312891,'valznightxy@email.com'),
+(20255721,'ZHEN','Kun','2005-12-27',334410928,'aguerokunelc10@email.com'),
+(20231045,'NGUYEN','Alice','2006-02-27',809482346,'aliceeenguyeeen@example.fr'),
+(20255421,'WIKTORIA','Janek','2006-11-26',467509211,'wikijanek@email.com'),
+(20190134,'SHANTANU','Rekha','2000-07-02',134679875,'rekhashantanu@email.com'),
+(20251332,'EL AMAROUI','Rim','2006-10-21',109283746,'rimelmroui@example.fr'),
+(20241122,'ARUNTHAVARASA','Erwin','2005-09-23',919108763,'erwinarjunarunth@email.com'),
+(20244891,'KEITA','Bruno','2006-01-13',783214060,'keitabrun0@email.com'),
+(20245050,'MOUSSA','Seth','2005-07-02',910382235,'mouss1seth@email.com'),
+(20230177,'GIGLIONI','Jordan','2005-12-25',707808909,'jggjjba2005@email.com'),
+(20249987,'NAIMA','Islem','2006-02-18',138699042,'n41m415l3m@email.com'),
+(20250198,'ROSTOM','Leila','2006-08-23',556897001,'leilstormy@example.fr'),
+(20244421,'ANGELIKI','Sophie','2006-02-18',679812324,'soophiangelik@email.com'),
+(20250907,'SORENSON','Mathisse','2007-05-09',709982141,'ikessorenm@email.com'),
+(20237212,'MAHMOOD','Akhshey','2005-12-01',139544912,'akshymhm00d@example.com'),
+(20251034,'DE CYRIAQUE','Marie Simonne','2007-04-12',122940928,'masimonnedecrq@example.fr'),
+(20220930,'KARKI','Sushila','1992-09-07',495002941,'sushinbiratnagar@example.fr'),
+(20253119,'SCALABRINE','Leon','2006-05-21',910219876,'leonidasclbrn@example.com'),
+(20241081,'TENMA-LUTZ','Maoli','2004-12-19',677324510,'lulutenmaoli@email.com'),
+(20233166,'CRUZ BRENES','Jaiva','2003-11-26',889012358,'javicruzb03@email.com'),
+(20251212,'LENTINI','Margot','2006-07-03',519385725,'lentinimrgtx@example.com'),
+(20240964,'LIWANAG','Mateo','2005-05-19',657382341,'liwanagno1@comail.fr'),
+(20244033,'DUBANOWSKI','Amelie','2007-02-12',238590122,'amydbnskyyy@email.com'),
+(20254367,'DAUPHINE','Soline','2006-08-17',765439081,'soylunadphn@email.com'),
+(20247221,'GUITARD','Robert','2005-03-28',819184603,'lerobertrd3@email.com'),
+(20257190,'SONG','Chloe','2006-04-11',642295013,'mrcladybugsong@email.com'),
+(20239288,'ELMANDIL','Corentin','2005-10-01',153130579,'coeurenmandil@email.com'),
+(20221275,'BONNET','Maximilien','2004-01-27',312941840,'maxichigobnt@example.fr'),
+(20243210,'GHAILAN','Doha','2005-03-02',114962846,'ghailandoha32@email.com'),
+(20244561,'BARLEY','Bernadette','1968-02-06',345970219,'barbernie@comail.fr');
+
+INSERT INTO EXAMEN(ID_Exam, Code_C, Salle, Coeff, Date_Ex, Duree) VALUES
+('SGBD_Partiel_2526','SGBDINF','IBGIB-05',5,'2025-12-17 14:00:00',2),
+('BMG2_DS1_2526','BMG2SDV','A105-1CYC',2,'2025-10-16 11:30:00',1),
+('BMG2_DS2_2526','BMG2SDV','A101-1CYC',2,'2025-11-27 14:00:00',1),
+('BMG2_Partiel_2526','BMG2SDV','A300-MAU',8,'2026-01-07 09:00:00',2),
+('COMP_DS_2526','COMPINF','A103-1CYC',3,'2025-11-20 10:30:00',1.5),
+('DADM_DS1_2526','ADMNDRT','A150-MAU',2,'2025-10-08 13:00:00',2),
+('DADM_DS2_2526','ADMNDRT','A150-MAU',2,'2025-11-17 13:00:00',2),
+('DADM_Partiel_2526','ADMNDRT','A300-MAU',6,'2025-12-18 15:00:00',2),
+('DRS2_Partiel_2526','DRS2DRT','A105-1CYC',10,'2025-12-19 10:30:00',2.5),
+('ASC1_Projet_2526','ADC1ART','GYM-IDF',4,'2025-12-06 13:00:00',5),
+('ADC1_Partiel_2526','ADC1ART','A300-MAU',4,'2026-01-05 14:30:00',1.5),
+('OOP1_DS_2526','OOP1INF','GRDA-IBG',3,'2025-10-30 11:00:00',1.5),
+('OOP1_Partiel_2526','OOP1INF','GRDA-IBG',7,'2025-12-17 14:00:00',2),
+('PHSV_TP_2526','PHSVSDV','2E07-MAU',2,'2025-11-05 08:30:00',4),
+('PHSV_Partiel_2526','PHSVSDV','A102-1CYC',6,'2026-01-08 10:30:00',1.5),
+('CHDS_Partiel_2526','CSTRCHM','A300-MAU',5,'2026-01-07 14:00:00',2),
+('CORG_DS_2526','ORGNCHM','A104-1CYC',3,'2025-11-03 10:30:00',1),
+('CORG_TP_2526','ORGNCHM','2N21-MAU',3,'2025-11-03 10:30:00',1),
+('CORG_Partiel_2526','ORGNCHM','A102-1CYC',8,'2026-01-05 11:00:00',2),
+('IMNO_Partiel_2526','IMNOSDV','A150-MAU',5,'2026-01-04 09:00:00',1.5),
+('IMNO_TP_2526','IMNOSDV','2N06-MAU',5,'2025-11-23 13:00:00',3),
+('INTSC_DS_2526','INTSPSY','A102-1CYC',1,'2025-10-29 09:00:00',1.5),
+('INTSC_Partiel_2526','INTSPSY','A105-1CYC',2,'2025-12-16 10:00:00',2),
+('INTSC_Soutenance_2526','INTSPSY','A150-MAU',1,'2025-11-27 09:00:00',6),
+('SPOC_Quiz_2526','PSCLSPC','Dist.',1,'2025-01-07 22:59:00',1);
+DELETE FROM EXAMEN WHERE ID_Exam = 'SPOC_Quiz_2526';
+INSERT INTO EXAMEN(ID_Exam, Code_C, Salle, Coeff, Date_Ex, Duree) VALUES
+('SPOC_Quiz_2526','PSCLSPC','Dist.',1,'2026-01-07 22:59:00',1);
+
+
+INSERT INTO ENSEIGNANT(ID_Ens, Nom_En, Prenom_En, Telephone_En, Email_En) VALUES 
+('12010007','OUIS','Jad','978563412','ouis760@email.com'),
+('12008128','GUITARD','Celine','788687858','guitard.celine@example.fr'),
+(12005263, 'FISCHER', 'Florence',390875612, 'fischflornc3@example.com'),
+(12010490, 'BAZILE MILFORT', 'Jean',712997659, 'bazilemilojn@example.fr'),
+(11998030, 'EVANS', 'Michael',521910731, 'mikevans91@example.com'),
+(12008112, 'MAHAMAT', 'Yasmine',134981743, 'mhmtyasmine@comail.fr'),
+(11999018,'TIJOUX', 'Anne Sophie',395177380, 'tijouxaso@example.com'),
+(12015792,'MCNEARY','Peter',902195764,'ptr97mcnry@email.com'),
+(12007671,'LIEBERTMAN','Oswald',902195764,'oswldlbrtmn@email.com'),
+(12022273,'HANNES-BALLET','Anne Madeleine',711098472,'hannesballetam@example.fr'),
+('12024556','ROSSI','Andrea','463687652','rossia_univ@email.com'),
+('12006420','ARROYO','Sergio Claudio','765278902','sergcarroyo@email.com'),
+('12016902','ELMANSOUR','Khadija','932168906','elmansourkmail@example.com');
+
+INSERT INTO ENCADREMENT(ID_Enc, ID_Ens, Code_C) VALUES 
+(1,12008128,'SGBDINF'),
+(2,12010007,'BMG2SDV'),
+(3,12010007,'PHSVSDV'),
+(4,12005263,'ADC1ART'),
+(5,12010490,'ADMNDRT'),
+(6,12010490,'DRS2DRT'),
+(7,11998030,'COMPINF'),
+(8,11998030,'OOP1INF'),
+(9,12008112,'INTSPSY'),
+(10,12008112,'PSCRPSY'),
+(11,12016902,'ORGNCHM'),
+(12,12024556,'CSTRCHM'),
+(13,12022273,'PSCLSPC'),
+(14,12010007,'PSCLSPC');
+INSERT INTO ENCADREMENT(ID_Enc, ID_Ens, Code_C) VALUES 
+(12010007,'ORGNCHM');
+
+-- INSCTRIPTIONS -- divisees par cours pour rendre insertion/lecture + facile 
+INSERT INTO INSCRIPTION(ID_Ins, Num_Et, Code_C,Status_Ins, Date_Ins, Raison_Annul) VALUES 
+(1,20190134,'PSCLSPC','EnCours','2025-08-30 9:31:24',NULL),
+(2,20220395,'PSCLSPC','Val','2025-08-28 21:56:09', NULL),
+(3,20220456,'PSCLSPC','Val','2024-09-12 15:41:36', NULL),
+(4,20220930,'PSCLSPC','Annul','2024-09-02 11:33:47','Annulation par l\'eleve'),
+(5,20221275,'PSCLSPC','EnCours','2025-08-30 19:18:26',NULL), 
+(7,20222123,'PSCLSPC','Val','2025-09-02 13:56:32',NULL),
+(8,20230177,'PSCLSPC','Val','2025-09-09 14:08:29',NULL),
+(9,20227890,'PSCLSPC','Val','2025-10-13 21:42:30',NULL),
+(10,20227890,'PSCLSPC','EnCours','2025-11-01 21:49:17',NULL),
+(11,20230746,'PSCLSPC','Val','2025-08-26 10:13:47', NULL),
+(12,20230998,'PSCLSPC','Val','2025-08-29 15:21:39', NULL),
+(13,20231045,'PSCLSPC','Val','2025-09-18 19:27:15', NULL),
+(14,20232732,'PSCLSPC','Val','2025-08-21 07:42:07', NULL),
+(15,20233166,'PSCLSPC','Suppr','2025-09-11 17:31:45', 'Convalidation UE Faite'),
+(16,20237212,'PSCLSPC','Val','2025-09-02 22:21:20',NULL),
+(17,20239288,'PSCLSPC','Val','2025-08-24 15:27:51', NULL),
+(18,20240957,'PSCLSPC','Val','2025-08-29 09:42:16', NULL),
+(19,20240964,'PSCLSPC','Val','2025-08-28 18:13:19', NULL),
+(20,20241081,'PSCLSPC','Val','2025-08-31 13:51:32', NULL),
+(21,20241122,'PSCLSPC','Val','2025-09-08 20:01:15', NULL),
+(22,20242024,'PSCLSPC','Val','2025-08-27 14:09:20', NULL),
+(23,20243210,'PSCLSPC','EnCours','2025-09-28 14:09:20', NULL),
+(24,20244033,'PSCLSPC','Val','2025-08-30 14:09:20', NULL),
+(25,20244421,'PSCLSPC','Val','2025-08-28 16:58:02', NULL),
+(26,20244561,'PSCLSPC','Val','2025-08-25 19:49:48', NULL),
+(27,20244891,'PSCLSPC','Val','2025-09-08 11:20:34', NULL),
+(28,20245050,'PSCLSPC','Val','2025-08-29 18:45:17', NULL),
+(29,20245681,'PSCLSPC','Val','2025-08-28 15:57:36', NULL),
+(30,20245799,'PSCLSPC','Val','2025-08-28 01:22:09', NULL),
+(31,20245799,'PSCLSPC','Suppr','2025-08-28 01:22:10', 'Erreur Systeme'),
+(32,20246037,'PSCLSPC','Val','2025-09-04 21:41:59', NULL),
+(33,20247221,'PSCLSPC','Val','2025-08-27 13:26:41', NULL),
+(34,20249987,'PSCLSPC','Val','2025-08-28 17:39:28', NULL),
+(35,20250001,'PSCLSPC','Val','2025-08-30 08:59:08', NULL),
+(36,20250198,'PSCLSPC','Val','2025-08-28 14:50:12', NULL),
+(37,20250490,'PSCLSPC','Val','2025-09-02 23:07:42', NULL),
+(38,20250505,'PSCLSPC','Val','2025-08-27 16:27:07', NULL),
+(39,20250907,'PSCLSPC','EnCours','2025-09-22 15:49:58', NULL),
+(40,20250929,'PSCLSPC','Val','2025-08-28 10:26:19', NULL),
+(41,20251015,'PSCLSPC','Val','2025-08-30 12:29:32', NULL),
+(42,20251034,'PSCLSPC','Val','2025-08-29 17:32:25', NULL),
+(43,20251212,'PSCLSPC','Val','2025-08-25 21:36:44', NULL),
+(44,20251243,'PSCLSPC','Val','2025-08-27 14:51:17', NULL),
+(45,20251332,'PSCLSPC','Val','2025-08-28 17:09:08', NULL),
+(46,20253119,'PSCLSPC','Val','2025-09-03 18:56:41', NULL),
+(47,20254308,'PSCLSPC','Val','2025-08-29 11:33:29', NULL),
+(48,20254367,'PSCLSPC','Val','2025-08-28 13:10:58', NULL),
+(49,20255421,'PSCLSPC','Val','2025-08-31 08:52:26', NULL),
+(50,20255423,'PSCLSPC','Val','2025-08-28 04:09:22', NULL),
+(51,20255423,'PSCLSPC','Suppr','2025-08-28 04:09:23', 'Erreur Systeme'),
+(52,20255721,'PSCLSPC','Val','2025-08-28 18:02:45', NULL),
+(53,20257190,'PSCLSPC','Val','2025-08-28 14:38:16', NULL),
+(54,20257892,'PSCLSPC','Val','2025-08-26 11:51:21', NULL),
+(55,20259532,'PSCLSPC','EnCours','2025-09-29 09:09:29', NULL),
+(56,20259604,'PSCLSPC','Val','2025-09-01 17:27:03', NULL);
+
+INSERT INTO INSCRIPTION(ID_Ins, Num_Et, Code_C,Status_Ins, Date_Ins, Raison_Annul) VALUES 
+(57, 20250001, 'BMG2SDV', 'Val', '2025-08-30 10:12:56', NULL),
+(58, 20255423, 'BMG2SDV', 'Val', '2025-08-28 05:02:33', NULL),
+(59, 20232732, 'BMG2SDV', 'Val', '2025-09-03 12:19:09', NULL),
+(60, 20227890, 'BMG2SDV', 'Val', '2025-10-14 09:14:47', NULL),
+(61, 20257190, 'BMG2SDV', 'Val', '2025-08-28 15:08:20', NULL),
+(62, 20249987, 'BMG2SDV', 'Val', '2025-08-28 18:17:19', NULL);
+
+INSERT INTO INSCRIPTION (ID_Ins, Num_Et, Code_C, Status_Ins, Date_Ins, Raison_Annul) VALUES
+(63, 20250001, 'PHSVSDV', 'Val', '2025-08-30 11:35:02', NULL),
+(64, 20255423, 'PHSVSDV', 'Val', '2025-08-28 05:13:28', NULL),
+(65, 20232732, 'PHSVSDV', 'Val', '2025-09-03 12:37:16', NULL),
+(66, 20227890, 'PHSVSDV', 'Val', '2025-10-14 09:20:54', NULL),
+(67, 20257190, 'PHSVSDV', 'Val', '2025-08-28 15:12:31', NULL);
+
+INSERT INTO INSCRIPTION (ID_Ins, Num_Et, Code_C, Status_Ins, Date_Ins, Raison_Annul) VALUES
+(68, 20250001, 'IMNOSDV', 'Val', '2025-09-01 11:43:32', NULL),
+(69, 20255423, 'IMNOSDV', 'Val', '2025-08-28 05:25:50', NULL),
+(70, 20232732, 'IMNOSDV', 'Val', '2025-09-03 12:47:23', NULL),
+(71, 20227890, 'IMNOSDV', 'Val', '2025-10-14 09:29:49', NULL),
+(72, 20257190, 'IMNOSDV', 'Val', '2025-08-28 15:16:37', NULL),
+(73, 20249987, 'IMNOSDV', 'Val', '2025-08-28 18:24:03', NULL);
+
+INSERT INTO INSCRIPTION (ID_Ins, Num_Et, Code_C, Status_Ins, Date_Ins, Raison_Annul) VALUES
+(74, 20250505, 'SGBDINF', 'Val', '2025-08-27 09:54:16', NULL),
+(75, 20240957, 'SGBDINF', 'Val', '2025-08-29 10:12:24', NULL),
+(76, 20230746, 'SGBDINF', 'Val', '2025-08-26 11:00:43', NULL),
+(77, 20250490, 'SGBDINF', 'Val', '2025-09-02 23:24:25', NULL),
+(78, 20220395, 'SGBDINF', 'Val', '2025-08-28 22:13:39', NULL), -- DL
+(79, 20231045, 'SGBDINF', 'Val', '2025-09-18 19:45:17', NULL), -- DL
+(80, 20254367, 'SGBDINF', 'EnCours', '2025-08-28 13:28:31', NULL);
+
+INSERT INTO INSCRIPTION (ID_Ins, Num_Et, Code_C, Status_Ins, Date_Ins, Raison_Annul) VALUES
+(81, 20250505, 'OOP1INF', 'Val', '2025-08-27 09:59:40', NULL),
+(82, 20240957, 'OOP1INF', 'Val', '2025-08-29 10:26:18', NULL),
+(83, 20230746, 'OOP1INF', 'Val', '2025-08-26 11:11:33', NULL),
+(84, 20250490, 'OOP1INF', 'Val', '2025-09-02 23:26:09', NULL),
+(85, 20220395, 'OOP1INF', 'Val', '2025-08-28 22:21:20', NULL), -- DL
+(86, 20231045, 'OOP1INF', 'Val', '2025-09-18 19:59:21', NULL), -- DL
+(87, 20254367, 'OOP1INF', 'Val', '2025-08-28 13:31:46', NULL),
+(88, 20227890, 'OOP1INF', 'Annul', '2025-10-14 09:36:05', 'Erreur inscription');
+
+INSERT INTO INSCRIPTION (ID_Ins, Num_Et, Code_C, Status_Ins, Date_Ins, Raison_Annul) VALUES
+(89, 20250505, 'COMPINF', 'Val', '2025-11-01 17:58:04', NULL), 
+(90, 20240957, 'COMPINF', 'Val', '2025-08-29 10:43:57', NULL),
+(91, 20230746, 'COMPINF', 'Val', '2025-08-26 11:22:33', NULL),
+(92, 20250490, 'COMPINF', 'EnCours', '2025-09-03 00:02:20', NULL),
+(93, 20220395, 'COMPINF', 'Val', '2025-09-05 20:40:11', NULL), -- DL
+(94, 20231045, 'COMPINF', 'Val', '2025-09-20 11:05:48', NULL); -- DL
+
+INSERT INTO INSCRIPTION (ID_Ins, Num_Et, Code_C, Status_Ins, Date_Ins, Raison_Annul) VALUES
+(95, 20237212, 'ADMNDRT', 'Val', '2025-09-03 22:22:23', NULL),
+(96, 20239288, 'ADMNDRT', 'Val', '2025-08-24 15:44:29', NULL),
+(97, 20244421, 'ADMNDRT', 'Val', '2025-08-28 17:15:13', NULL), 
+(98, 20220930, 'ADMNDRT', 'Annul', '2024-09-03 09:18:10', 'Annulation par l\'eleve');
+
+INSERT INTO INSCRIPTION (ID_Ins, Num_Et, Code_C, Status_Ins, Date_Ins, Raison_Annul) VALUES
+(99, 20237212, 'DRS2DRT', 'Val', '2025-09-04 22:34:56', NULL),
+(100, 20239288, 'DRS2DRT', 'Val', '2025-08-24 16:01:41', NULL),
+(101, 20220930, 'DRS2DRT', 'Annul', '2024-09-03 09:29:37', 'Annulation par l\'eleve');
+
+INSERT INTO INSCRIPTION (ID_Ins, Num_Et, Code_C, Status_Ins, Date_Ins, Raison_Annul) VALUES
+(102, 20222123, 'ADC1ART', 'Val', '2025-09-02 13:59:15', NULL),
+(103, 20251243, 'ADC1ART', 'Val', '2025-08-27 15:06:39', NULL),
+(104, 20241081, 'ADC1ART', 'Val', '2025-08-31 14:15:57', NULL);
+
+INSERT INTO INSCRIPTION (ID_Ins, Num_Et, Code_C, Status_Ins, Date_Ins, Raison_Annul) VALUES
+(105, 20222123, 'HDDNART', 'Val', '2025-09-05 19:30:39', NULL),
+(106, 20251243, 'HDDNART', 'Val', '2025-08-27 15:15:15', NULL);
+
+INSERT INTO INSCRIPTION (ID_Ins, Num_Et, Code_C, Status_Ins, Date_Ins, Raison_Annul) VALUES
+(107, 20241122, 'INTSPSY', 'Val', '2025-09-08 20:12:14', NULL),
+(108, 20244891, 'INTSPSY', 'Val', '2025-09-08 11:33:41', NULL),
+(109, 20241122, 'PSCRPSY', 'Val', '2025-09-08 20:20:38', NULL),
+(110, 20244891, 'PSCRPSY', 'EnCours', '2025-09-08 11:42:29', NULL);
+
+INSERT INTO INSCRIPTION (ID_Ins, Num_Et, Code_C, Status_Ins, Date_Ins, Raison_Annul) VALUES
+(111, 20254308, 'ORGNCHM', 'Val', '2025-08-29 11:40:12', NULL),
+(112, 20233166, 'ORGNCHM', 'Val', '2025-09-11 17:51:36', NULL),
+(113, 20244033, 'ORGNCHM', 'Val', '2025-08-30 14:20:41', NULL);
+
+INSERT INTO INSCRIPTION (ID_Ins, Num_Et, Code_C, Status_Ins, Date_Ins, Raison_Annul) VALUES
+(114, 20254308, 'CSTRCHM', 'Val', '2025-08-29 08:11:57', NULL),
+(115, 20233166, 'CSTRCHM', 'Val', '2025-09-11 17:48:09', NULL),
+(116, 20244033, 'CSTRCHM', 'Val', '2025-08-30 14:29:25', NULL);
+
+-- NOTES -- divisees par cours comme inscriptions
+SELECT * FROM INSCRIPTION WHERE Num_Et = 20244033;
+INSERT INTO NOTE(ID_Note, Num_Et, ID_Exam, Note) VALUES 
+(1,20250001,'BMG2_DS1_2526',16.75),
+(2,20255423,'BMG2_DS1_2526',13.5),
+(3,20232732,'BMG2_DS1_2526',16),
+(4,20227890,'BMG2_DS1_2526',8.5),
+(5,20257190,'BMG2_DS2_2526',12.5),
+(6,20250001,'BMG2_DS2_2526',17.75),
+(7,20255423,'BMG2_DS2_2526',14),
+(8,20232732,'BMG2_DS2_2526',12),
+(9,20227890,'BMG2_DS1_2526',10),
+(10,20257190,'BMG2_DS2_2526',16);
+
+INSERT INTO NOTE(ID_Note, Num_Et, ID_Exam, Note) VALUES 
+(11,20237212,'DADM_DS1_2526',11.5),
+(12,20239288,'DADM_DS1_2526',15),
+(13,20244421,'DADM_DS1_2526',13),
+(14,20237212,'DADM_DS2_2526',12),
+(15,20239288,'DADM_DS2_2526',13.5),
+(16,20244421,'DADM_DS2_2526',0);
+
+INSERT INTO NOTE(ID_Note, Num_Et, ID_Exam, Note) VALUES 
+(17,20250505,'OOP1_DS_2526',11.5),
+(18,20240957,'OOP1_DS_2526',14),
+(19,20230746,'OOP1_DS_2526',13),
+(20,20250490,'OOP1_DS_2526',12),
+(21,20220395,'OOP1_DS_2526',16),
+(22,20231045,'OOP1_DS_2526',12.5);
+
+INSERT INTO NOTE(ID_Note, Num_Et, ID_Exam, Note) VALUES 
+(23,20250001,'PHSV_TP_2526',13.5),
+(24,20255423,'PHSV_TP_2526',15),
+(25,20232732,'PHSV_TP_2526',14),
+(26,20227890,'PHSV_TP_2526',15),
+(27,20257190,'PHSV_TP_2526',12.5);
+
+INSERT INTO NOTE(ID_Note, Num_Et, ID_Exam, Note) VALUES
+(28, 20254308, 'CORG_DS_2526', 14.17),
+(29, 20233166, 'CORG_DS_2526', 13.66),
+(30, 20244033, 'CORG_DS_2526', 12),
+(31, 20254308, 'CORG_TP_2526', 14),
+(32, 20233166, 'CORG_TP_2526', 15),
+(33, 20244033, 'CORG_TP_2526', 10);
+
+INSERT INTO NOTE(ID_Note, Num_Et, ID_Exam, Note) VALUES
+(34, 20250505, 'COMP_DS_2526', 15.5),
+(35, 20240957, 'COMP_DS_2526', 12),
+(36, 20230746, 'COMP_DS_2526', 13),
+(37, 20250490, 'COMP_DS_2526', 12.5),
+(38, 20220395, 'COMP_DS_2526', 16.0),
+(39, 20231045, 'COMP_DS_2526', 8);
+
+INSERT INTO NOTE(ID_Note, Num_Et, ID_Exam, Note) VALUES
+(40, 20241122, 'INTSC_Soutenance_2526', 15.0),
+(41, 20244891, 'INTSC_Soutenance_2526', 13.0);
+
+INSERT INTO NOTE(ID_Note, Num_Et, ID_Exam, Note) VALUES
+(42, 20222123, 'ASC1_Projet_2526', 14.0),
+(43, 20251243, 'ASC1_Projet_2526', 15.0),
+(44, 20241081, 'ASC1_Projet_2526', 12.0);
+
+INSERT INTO NOTE(ID_Note, Num_Et, ID_Exam, Note) VALUES
+(45, 20250001, 'IMNO_TP_2526', 12.0),
+(46, 20255423, 'IMNO_TP_2526', 11.5),
+(47, 20232732, 'IMNO_TP_2526', 10.0),
+(48, 20227890, 'IMNO_TP_2526', 13.0),
+(49, 20257190, 'IMNO_TP_2526', 14.0),
+(50, 20249987, 'IMNO_TP_2526', 13.5);
+
+-- Vérifier les notes d'étudiants qui ne sont pas inscrits au cours correspondant
+SELECT 
+    n.ID_Note,
+    n.Num_Et,
+    e.Nom_Et,
+    e.Prenom_Et,
+    ex.ID_Exam,
+    ex.Code_C AS Code_Cours,
+    c.Nom_C,
+    n.Note
+FROM NOTE n
+JOIN EXAMEN ex ON n.ID_Exam = ex.ID_Exam
+JOIN COURS c ON ex.Code_C = c.Code_Cours
+JOIN ETUDIANT e ON n.Num_Et = e.Num_Etud
+LEFT JOIN INSCRIPTION i ON n.Num_Et = i.Num_Et AND ex.Code_C = i.Code_C
+WHERE i.ID_Ins IS NULL
+ORDER BY ex.Code_C, e.Nom_Et;
